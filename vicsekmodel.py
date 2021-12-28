@@ -1,3 +1,5 @@
+# Written in Collaboration with Dr. Weijie Chen (Alumnus of Brown University)
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -59,7 +61,7 @@ def get_average(thetas, neighbors):
 
 
 def plot_vectors(coords, thetas):
-    # generate random color for every particle
+    # Generate random color for every particle
     colors = ["b", "g", "y", "m", "c", "pink", "purple", "seagreen",
               "salmon", "orange", "paleturquoise", "midnightblue",
               "crimson", "lavender"]
@@ -67,10 +69,10 @@ def plot_vectors(coords, thetas):
     for i, (x, y) in enumerate(coords):
         c = colors[i % len(colors)]
 
-        # plot point
+        # Plot point
         plt.scatter(x, y, color='b', marker=".")
 
-        # plot tail
+        # Plot tail
         v = np.zeros(2)
         v[0] = np.cos(thetas[i])
         v[1] = np.sin(thetas[i])
@@ -93,14 +95,12 @@ def calculate_phi(particles, thetas):
     return (phi / n - 2 / np.pi) / (1 - 2 / np.pi)
 
 
-# the main part of the program
+# core program
 
 particles = get_random_particles(R, N)
 thetas = np.random.uniform(-np.pi, np.pi, size=(N, 1))
 
 while t < T:
-
-    #    np.savetxt("2f.txt",get_neighbors(particles,r,3,4),'%.2f')
 
     for i, (x, y) in enumerate(particles):
         rand_angle = np.random.uniform(-np.pi, np.pi)
@@ -115,7 +115,7 @@ while t < T:
 
         temp = particles[i] + dt * v * orient_vector
 
-        # circular bounrdary condition
+        # Circular boundary condition
 
         a = temp[0]
         b = temp[1]
