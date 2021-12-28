@@ -1,4 +1,4 @@
-# Written in Collaboration with Dr. Weijie Chen (Alumnus of Brown University)
+# Written in collaboration with Dr. Weijie Chen (Alumnus of Brown University)
 
 import numpy as np
 import matplotlib.pyplot as plt
